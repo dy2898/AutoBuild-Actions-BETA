@@ -63,6 +63,8 @@ EOF
 		done ; unset i
 
 		rm -r ${FEEDS_LUCI}/luci-theme-argon*
+		AddPackage git passwall-depends openwrt-passwall xiaorouji packages
+		AddPackage git passwall-luci openwrt-passwall xiaorouji luci
 		AddPackage git themes luci-theme-argon jerrykuku 18.06
 		AddPackage svn apps minieap immortalwrt/packages/branches/openwrt-18.06/net
 		AddPackage svn other luci-app-openclash vernesong/OpenClash/branches/dev
@@ -82,6 +84,8 @@ EOF
 		case "${TARGET_PROFILE}" in
 		d-team_newifi-d2)
 			Copy ${CustomFiles}/${TARGET_PROFILE}_system ${BASE_FILES}/etc/config system
+			Copy ${CustomFiles}/Depends/tailscale  ${FEEDS_PKG}/tailscale
+
 		;;
 		x86_64)
 			Copy ${CustomFiles}/Depends/cpuset ${BASE_FILES}/bin
