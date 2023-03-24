@@ -84,7 +84,7 @@ EOF
 		case "${TARGET_PROFILE}" in
 		d-team_newifi-d2)
 			Copy ${CustomFiles}/${TARGET_PROFILE}_system ${BASE_FILES}/etc/config system
-			Copy ${CustomFiles}/Depends/tailscale  ${FEEDS_PKG}/tailscale
+			Copy ${CustomFiles}/Depends/tailscale  ${WORK}/feeds/packages/net/tailscale
 
 		;;
 		x86_64)
